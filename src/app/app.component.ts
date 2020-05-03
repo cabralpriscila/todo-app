@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Todo } from 'src/models/todo.model';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,15 @@ export class AppComponent {
   title: String = 'Tarefas';
   form: FormGroup;
 
-  constructor(){
+  constructor(private formBuilder: FormBuilder){
+    this.form = this.formBuilder.group({
+      task: ['', Validators.compose([
+        Validators.minLength(3),
+        Validators.maxLength(100),
+        Validators.required,
+      ])]
+    });
+
     this.todos.push(new Todo(1, 'Ir ao supermercado', false));
     this.todos.push(new Todo(2, 'Cortar o cabelo', false));
   }
