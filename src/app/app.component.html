@@ -1,4 +1,4 @@
-<div class="insert-tasks">
+<div>
   <h1 class="title">{{title}}</h1>
   <div class="img">
     <img src="../assets/check_boxes.svg" alt="">
@@ -16,13 +16,14 @@
   </form>
 </div>
 
-<div class="tasks">
+<div>
   <ul>
     <p class="no-results" *ngIf="todos.length==0">
       <small>Não existem tarefas</small>
     </p>
     <li *ngFor="let todo of todos">{{ todo.task }}
-      <button *ngIf="!todo.done" (click)="markAsDone(todo)" class="done-button"><i class="fa fa-check-square-o" aria-hidden="true"></i></button>
+      <button *ngIf="!todo.done" (click)="markAsDone(todo)" class="done-button"><i class="fa fa-check-square-o"
+          aria-hidden="true"></i></button>
       <button *ngIf="todo.done" (click)="markAsUndone(todo)" class="repeat-button">Refazer</button>
       <button (click)="remove(todo)" class="delete-button"><i class="fa fa-trash"></i></button>
     </li>
