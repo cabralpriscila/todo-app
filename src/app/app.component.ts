@@ -20,9 +20,6 @@ export class AppComponent {
         Validators.required,
       ])]
     });
-
-    this.todos.push(new Todo(1, 'Ir ao supermercado', false));
-    this.todos.push(new Todo(2, 'Cortar o cabelo', false));
   }
 
   add(){
