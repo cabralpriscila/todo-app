@@ -29,6 +29,11 @@ export class AppComponent {
     const task = this.form.controls['task'].value;
     const id = this.todos.length +1;
     this.todos.push(new Todo(id, task, false));
+    this.clear();
+  }
+
+  clear(){
+    this.form.reset();
   }
 
   remove(todo: Todo){
