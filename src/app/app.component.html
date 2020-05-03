@@ -11,6 +11,6 @@
     <label for="">Nova Tarefa </label>
     <input type="text" placeholder="Ir ao mercado" maxlength="100" formControlName="task">
     <small *ngIf="form.controls.task.invalid && !form.controls.task.pristine">Esse campo deve conter entre 3 e 100 caracteres</small>
-    <button [disabled]="form.invalid">Salvar</button>
+    <button [disabled]="form.invalid" (click)="add()">Salvar</button>
   </fieldset>
 </form>
