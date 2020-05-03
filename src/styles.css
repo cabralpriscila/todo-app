@@ -1,1 +1,112 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Jost', sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F7F7F7;
+    /* background: -webkit-linear-gradient(left, #1d1658, #164c96); */
+}
+
+img{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+button{
+    cursor: pointer;
+}
+
+.title{
+    font-family: 'Raleway', sans-serif;
+    color: #F50057;
+    font-size: 5em;
+    text-shadow: 2px 1px #000;
+    text-align: center;
+    margin: 70px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.warning{
+    color: rgb(243, 64, 127);  
+    padding: 15px; 
+}
+
+.button{
+    background-color: #F50057;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.done-button, .repeat-button, .delete-button{
+    padding: 5px;
+    background: #F50057;
+    color: #F7F7F7;
+}
+
+.no-results{
+    text-align: center;
+    color: #F50057;
+}
+
+fieldset{
+    color: #fff;
+    text-align: center;
+    border: none;
+}
+
+h2{
+    text-align: center;
+    margin-top: 15px;
+}
+input{
+    padding: 10px;
+}
+
+ul{
+    text-align: left;
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 4px 14px 0px rgba(0, 0, 0, 0.39);
+}
+
+li{
+    padding: 15px;
+    margin: 10px;
+    font-size: 1em;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+li>button{
+    border: none;
+    color: #F50057;
+    opacity: 0.6;
+    transition: opacity 1s;
+    float: right;
+    margin-left: 15px;
+}
+
+li>button:hover{
+    opacity: 1;
+    transition: opacity 1s;
+}

@@ -1,19 +1,30 @@
-<h1>{{title}}</h1>
-<ul>
-  <p *ngIf="todos.length==0">
-    <small>Não existem tarefas</small>
-  </p>
-  <li *ngFor="let todo of todos">{{ todo.task }} - 
-    <button *ngIf="!todo.done" (click)="markAsDone(todo)">Concluir</button>  
-    <button *ngIf="todo.done" (click)="markAsUndone(todo)">Refazer</button> | 
-    <button (click)="remove(todo)">Excluir</button></li>
-</ul>
+<div class="insert-tasks">
+  <h1 class="title">{{title}}</h1>
+  <div class="img">
+    <img src="../assets/check_boxes.svg" alt="">
+  </div>
+  <form [formGroup]="form">
+    <fieldset>
+      <h2>Lembrar de:</h2><br />
+      <small class="warning" *ngIf="form.controls.task.invalid && !form.controls.task.pristine">* Esse campo deve conter
+        entre 3 e 100
+        caracteres</small>
+      <br>
+      <input type="text" placeholder="Ir ao mercado" maxlength="100" formControlName="task">
+      <button class="button" [disabled]="form.invalid" (click)="add()">Salvar</button>
+    </fieldset>
+  </form>
+</div>
 
-<form [formGroup]="form"> 
-  <fieldset>
-    <label for="">Nova Tarefa </label>
-    <input type="text" placeholder="Ir ao mercado" maxlength="100" formControlName="task">
-    <small *ngIf="form.controls.task.invalid && !form.controls.task.pristine">Esse campo deve conter entre 3 e 100 caracteres</small>
-    <button [disabled]="form.invalid" (click)="add()">Salvar</button>
-  </fieldset>
-</form>
+<div class="tasks">
+  <ul>
+    <p class="no-results" *ngIf="todos.length==0">
+      <small>Não existem tarefas</small>
+    </p>
+    <li *ngFor="let todo of todos">{{ todo.task }}
+      <button *ngIf="!todo.done" (click)="markAsDone(todo)" class="done-button"><i class="fa fa-check-square-o" aria-hidden="true"></i></button>
+      <button *ngIf="todo.done" (click)="markAsUndone(todo)" class="repeat-button">Refazer</button>
+      <button (click)="remove(todo)" class="delete-button"><i class="fa fa-trash"></i></button>
+    </li>
+  </ul>
+</div>
