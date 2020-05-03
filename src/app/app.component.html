@@ -6,7 +6,7 @@
     <button (click)="remove(todo)">Excluir</button></li>
 </ul>
 
-<form>
+<form [formGroup]="form"> 
   <fieldset>
     <label for="">Nova Tarefa </label>
     <input type="text">

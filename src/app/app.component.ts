@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Todo } from 'src/models/todo.model';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { Todo } from 'src/models/todo.model';
 export class AppComponent {
   todos: Todo[] = [];
   title: String = 'Tarefas';
+  form: FormGroup;
 
   constructor(){
     this.todos.push(new Todo(1, 'Ir ao supermercado', false));
