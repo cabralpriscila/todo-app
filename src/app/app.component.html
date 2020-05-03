@@ -3,5 +3,5 @@
   <li *ngFor="let todo of todos">{{ todo.task }} - 
     <button *ngIf="!todo.done">Concluir</button> |  
     <button *ngIf="todo.done">Refazer</button> | 
-    <button>Excluir</button></li>
+    <button (click)="remove(todo)">Excluir</button></li>
 </ul>
